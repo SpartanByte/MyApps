@@ -109,12 +109,11 @@
 }
 
 .app-nav{
-    display: block;
     margin: 0 auto;
-    width: 50%;}
+    width: 80%;}
 .app-nav li{
+    min-width: 20%;
     float: left;
-    min-width: 33%;
     text-align: center;
     list-style-type: none;}
 
@@ -128,14 +127,28 @@
 .btn-standard:hover{background:#fff;color:#000;}
 .btn-standard a{color:#fff;}
 
-
 .concert-table{
+    font-family: 'Roboto', sans-serif;
+    margin: 0 auto;
     color: #fff;
     width: 80%;
+}
+.concert-table thead{
+    border: 1px solid #7C7C7C;
 }
 .concert-table th{
     margin-bottom: 1%;
 }
 .concert-table th, td{
-    min-width: 40%;
+    min-width: 30%;
+}
+.concert-table td{
+    padding: 2px 0 2px 0;
+    border-bottom: 1px double #BF0000;
+}
+.concert-form input{color:#000 !important;}
+
+.footer-container{
+    position: absolute;
+    bottom: 0;
 }

@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -12,7 +11,15 @@ class ConcertController extends Controller
     // load them all
     public function index(){
         $concerts = Concert::all();
-        return view('concerts.index')->with(compact('concerts'));
+        $events = $concerts->groupBy('concert_date');
+
+        return view('concerts.index')->with(compact('events'));
+    }
+
+    public function indexByBand(){
+        $concerts = Concert::orderBy('band_name')->get();
+        $bands = $concerts->groupBy('band_name');
+        return view('concerts.index-by-band')->with(compact('bands'));
     }
 
     public function create(){
@@ -24,14 +31,7 @@ class ConcertController extends Controller
         //     'band' => 'required',
         //     'concert_date' => 'required',
         //     'venue' => 'required',
-        //     'location' => 'required'
-        // ]);
-
-        // $concert = Concert::create([
-        //     'band_name' => $request->band,
-        //     'concert_date' => $request->date,
-        //     'venue' => $request->venue,
-        //     'city_state' => $request->location
+        //     'location' => 'required',
         // ]);
 
         $carbonDate = Carbon::parse($request->date);
@@ -41,7 +41,8 @@ class ConcertController extends Controller
         $concert->venue = $request->venue;
         $concert->city_state = $request->location;
         $concert->save();
-        return view('concerts.index');
+
+        return redirect()->route('concerts.index');
     }
 
 
@@ -55,12 +56,12 @@ class ConcertController extends Controller
 
     public function update(Request $request, $id){
 
-        // $concert = Concert::find($id);
-        // $concert->band_name = ucwords($request->band);
-        // $concert->concert_date = $request->date;
-        // $concert->venue = $request->venue;
-        // $concert->city_state = $request->location;
-        // $concert->save();
+        $concert = Concert::find($id);
+        $concert->band_name = ucwords($request->band);
+        $concert->concert_date = $request->date;
+        $concert->venue = $request->venue;
+        $concert->city_state = $request->location;
+        $concert->save();
     }
 
     public function destroy($id){

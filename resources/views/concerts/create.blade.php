@@ -1,11 +1,14 @@
-@extends('layouts.default')
+@extends('layouts.concert')
 @section('content')
     <div class="concert-pg-wrapper center-block">
         <div class="page-header">
             <h1>Add A Concert</h1>
+            <ul>
+                <a href="{{route('concerts.index')}}"><li class="block-btn">Concert Index</li></a>
+            </ul>
         </div>
 
-        <form class="create-form text-left" method="POST" action="{{ route('concerts.store') }}">
+        <form class="concert-form" method="POST" action="{{ route('concerts.store') }}">
             {{ csrf_field() }}
             <div class="form-section">
                 <label for="name"><span class="text-h2">Band:<span class="req-asterisk">*</span></span>

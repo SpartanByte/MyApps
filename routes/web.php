@@ -23,6 +23,7 @@ Route::group(['middleware' => ['auth']], function(){
 
         //Index
         Route::get('/', 'ConcertController@index')->name('index');
+        Route::get('index-by-band', 'ConcertController@indexByBand')->name('index-by-band');
 
         // Create
         Route::get('create', 'ConcertController@create')->name('create');
