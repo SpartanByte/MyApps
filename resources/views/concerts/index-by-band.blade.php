@@ -1,8 +1,8 @@
 @extends('layouts.concert')
 @section('content')
-    <div class="concert-pg-wrapper">
-        <div class="page-header">
-            <h2 class="text-center text-up">Concerts</h2>
+    <div class="app-pg-wrapper">
+        <div class="pg-header">
+            <h1>Concerts (Ordered By Band)</h1>
         </div>
         <table class="concert-table">
             <thead>

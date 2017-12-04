@@ -1,9 +1,9 @@
 @if(Auth::check())
     <ul class="app-nav text-up">
         <a href="/"><li class="btn-standard">My Apps Home</li></a>
-        <a href="{{route('concerts.index')}}"><li class="btn-standard">Concert Index</li></a>
-        <a href="{{route('concerts.index-by-band')}}"><li class="btn-standard">Concerts By Individual Band</li></a>
-        <a href="{{route('concerts.create')}}"><li class="btn-standard">Add A Concert</li></a>
+        <a href="{{route('movies.index')}}"><li class="btn-standard">Movie Index</li></a>
+        <a href="{{route('movies.create')}}"><li class="btn-standard">Add A Movie</li></a>
+        <a href="#"><li class="btn-standard">Movie Wishlist</li></a>
         <a href="{{ url('/logout') }}"
                 onclick="event.preventDefault();
                      document.getElementById('logout-form').submit();">

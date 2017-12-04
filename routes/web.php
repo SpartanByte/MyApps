@@ -38,3 +38,16 @@ Route::group(['middleware' => ['auth']], function(){
     });
 });
 
+/** ======= MOVIE APP ROUTES ======= */
+Route::group(['middleware' => ['auth']], function(){
+    Route::prefix('movies')->name('movies.')->group(function(){
+
+        // Index
+        Route::get('/', 'MovieController@index')->name('index');
+
+        // Create
+        Route::get('create', 'MovieController@create')->name('create');
+        Route::post('/', 'MovieController@store')->name('store');
+
+    });
+});
