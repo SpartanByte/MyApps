@@ -28,7 +28,7 @@
                 </label>
             </div>
             <div class="form-btn-group">
-                <input type="submit" class="btn btn-small btn-success post-btn" value="Submit Post" />
+                <input type="submit" class="btn btn-small btn-success post-btn" value="Submit Band Set" />
             </div>
         </form>
     </div>

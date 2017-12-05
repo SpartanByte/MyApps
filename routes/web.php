@@ -25,6 +25,8 @@ Route::group(['middleware' => ['auth']], function(){
         Route::get('/', 'ConcertController@index')->name('index');
         Route::get('index-by-band', 'ConcertController@indexByBand')->name('index-by-band');
 
+        Route::get('{id}', 'ConcertController@show')->name('show');
+
         // Create
         Route::get('create', 'ConcertController@create')->name('create');
         Route::post('/', 'ConcertController@store')->name('store');

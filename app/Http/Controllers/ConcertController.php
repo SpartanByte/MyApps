@@ -7,20 +7,18 @@ use App\Models\Concert;
 
 
 class ConcertController extends Controller
-{
+{ 
     // load them all
     public function index(){
-        $concerts = Concert::all();
-        $events = $concerts->groupBy('concert_date');
-
+        $events = Concert::all()->sortByDesc('concert_date');
         return view('concerts.index')->with(compact('events'));
     }
 
-    public function indexByBand(){
-        $concerts = Concert::orderBy('band_name')->get();
-        $bands = $concerts->groupBy('band_name');
-        return view('concerts.index-by-band')->with(compact('bands'));
-    }
+    // public function indexByBand(){
+    //     $concerts = Concert::orderBy('band_name')->get();
+    //     $bands = $concerts->groupBy('band_name');
+    //     return view('concerts.index-by-band')->with(compact('bands'));
+    // }
 
     public function create(){
         return view('concerts.create');
@@ -47,7 +45,8 @@ class ConcertController extends Controller
 
 
     public function show($id){
-        return view('concerts.show');
+        $bandSet = Concert::find($id);
+        return view('concerts.show')->with(compact('bandSet'));
     }
 
     public function edit($id){

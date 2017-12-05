@@ -11,30 +11,21 @@
                     <th>Date</th>
                     <th>Venue</th>
                     <th>Location</th>
+                    <th class="text-center">Setlist</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach($events as $event)
-                    @foreach($event as $lineup)
                     <tr>
-                        <td>{{$lineup->band_name}}</td>
-                        <td>{{$lineup->concert_date}}</td>
-                        <td>{{$lineup->venue}}</td>
-                        <td>{{$lineup->city_state}}</td>
+                        <td>{{$event->band_name}}</td>
+                        <td>{{$event->concert_date}}</td>
+                        <td>{{$event->venue}}</td>
+                        <td>{{$event->city_state}}</td>
+                        <td class="btn-standard setlist text-center"><a href="concerts/{{$event->id}}">View</a></td>
                     </tr>
-                    @endforeach
                 @endforeach
             </tbody>
         </table>
-{{--         <ol>
-        @foreach($events as $event)
-            @foreach($event as $lineup)
-            <li>{{$lineup->concert_date}}</li>
-            <ul>
-                <li>{{$lineup->band_name}}</li>
-            </ul>
-            @endforeach
-        @endforeach
-    </ol> --}}
+
     </div>
 @stop
