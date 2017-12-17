@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Models\Movie;
+use DB;
 
 
 class MovieController extends Controller
 {
     // load them all
     public function index(){
-        $movies = Movie::all();
+        // $movies = Movie::all();
+        // $movies = Movies::all()->orderBy('title', 'desc')->get();
+        $movies = DB::table('movies')->orderBy('title', 'asc')->get();
 
         return view('movies.index')->with(compact('movies'));
         // return view('movies.index');

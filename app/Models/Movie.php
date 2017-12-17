@@ -16,5 +16,6 @@ class Movie extends Model
         'year',
         'genre',
         'media_type',
+        'owner',
     ];
 }

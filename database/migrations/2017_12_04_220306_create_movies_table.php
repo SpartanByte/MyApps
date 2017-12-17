@@ -19,6 +19,7 @@ class CreateMoviesTable extends Migration
             $table->integer('year');
             $table->string('genre');
             $table->string('media_type');
+            $table->string('owner');
             $table->timestamps();
         });
     }

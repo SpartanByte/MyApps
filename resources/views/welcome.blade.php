@@ -16,7 +16,6 @@
             html, body {
                 background-color: #363636;
                 color:#b0b0b0;
-                /*font-family: 'Raleway', sans-serif;*/
                 font-family: 'Roboto', sans-serif;
                 font-weight: 100;
                 height: 100vh;
@@ -90,7 +89,7 @@
 
                 <div class="links">
                     <a href="{{route('concerts.index')}}">Concert App</a>
-                    <a href="https://laracasts.com">Movies App</a>
+                    <a href="{{route('movies.index')}}">Movies App</a>
                     <a href="https://laravel-news.com">Empty Slot</a>
                     <a href="https://forge.laravel.com">Empty Slot</a>
                 </div>
