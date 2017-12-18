@@ -50,6 +50,10 @@ Route::group(['middleware' => ['auth']], function(){
         // Index
         Route::get('/', 'MovieController@index')->name('index');
 
+        // Edit
+        Route::get('{id}/edit', 'MovieController@edit')->name('edit');
+        Route::post('{id}', 'MovieController@update')->name('update');
+
         // Create
         Route::get('create', 'MovieController@create')->name('create');
         Route::post('/', 'MovieController@store')->name('store');

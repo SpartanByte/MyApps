@@ -27,8 +27,12 @@
                     <input name="media" class="input-form" type="text" id="media" placeholder="Enter Media Types" required>
                 </label>
             </div>
+            <div class="form-section">
+                <label for="owner"><span class="text-h2">Owner:<span class="req-asterisk">*</span></span>
+                    <input name="owner" class="input-form" type="text" id="owner" placeholder="Enter Owner (if it matters)" required >
+                </label>
             <div class="form-btn-group">
-                <input type="submit" class="btn btn-small btn-success post-btn" value="Submit Post" />
+                <input type="submit" class="btn btn-small btn-success post-btn" value="Add Movie" />
             </div>
         </form>
     </div>

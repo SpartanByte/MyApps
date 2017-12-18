@@ -37,6 +37,7 @@ class MovieController extends Controller
         $movie->year = $request->year;
         $movie->genre = $request->genre;
         $movie->media_type = $request->media;
+        $movie->owner = $request->owner;
         $movie->save();
 
         return redirect()->route('movies.index');
@@ -48,7 +49,8 @@ class MovieController extends Controller
     }
 
     public function edit($id){
-        return view('movies.edit');
+        $movie = Movie::find($id);
+        return view('movies.edit')->with(compact('movie'));
     }
 
     public function update(Request $request, $id){
@@ -58,7 +60,10 @@ class MovieController extends Controller
         $movie->year = $request->year;
         $movie->genre = $request->genre;
         $movie->media_type = $request->media;
+        $movie->owner = $request->owner;
         $movie->save();
+
+        return redirect()->route('movies.index');
     }
 
     public function destroy($id){

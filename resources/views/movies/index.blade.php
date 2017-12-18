@@ -11,6 +11,8 @@
                     <th>Release Year</th>
                     <th>Genre</th>
                     <th>Type of Media</th>
+                    <th>Owner</th>
+                    <td>Edit</td>
                 </tr>
             </thead>
             <tbody>
@@ -20,6 +22,8 @@
                         <td>{{$movie->year}}</td>
                         <td>{{$movie->genre}}</td>
                         <td>{{$movie->media_type}}</td>
+                        <td>{{$movie->owner}}</td>
+                        <td><a href="{{route('movies.edit', $movie->id)}}">Edit</a></td>
                     </tr>
                 @endforeach
             </tbody>

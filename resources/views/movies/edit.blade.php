@@ -2,10 +2,8 @@
 @section('content')
     <div class="grey-banner">
         <div class="description-container">
-            <h1>Profile Edit</h1>
-            <p class="text-h2 text-up">Editing &#9656; {{$user->name}}</p>
-            <p><em><strong>Note</strong></em>: this form is for editing domain contact information and settings for {{$user->name}} on domain: {{$user->domain}}.</p>
-            <p><span class="req-asterisk">*</span>All fields are required and must be filled in if current value is removed.</p>
+            <h1>Movie Edit</h1>
+            
         </div>
     </div>
     <div class="ssl-form-container">
@@ -30,9 +28,16 @@
                 </div>
 
                 <div class="form-section">
-                    <label for="media-type"><span class="text-h3">Genre:<span class="req-asterisk">*</span></span>
+                    <label for="media"><span class="text-h3">Media Type:<span class="req-asterisk">*</span></span>
 
-                        <input name="media-type" class="input-form" type="text" id="genre" value="{{$movie->media_type}}" required >
+                        <input name="media" class="input-form" type="text" id="media" value="{{$movie->media_type}}" required >
+                    </label>
+                </div>
+
+                <div class="form-section">
+                    <label for="owner"><span class="text-h3">Owner:<span class="req-asterisk">*</span></span>
+
+                        <input name="owner" class="input-form" type="text" id="genre" value="{{$movie->owner}}" required >
                     </label>
                 </div>
 
@@ -50,7 +55,7 @@
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary cancel-modal" data-dismiss="modal">Cancel</button>
                                 <button class="btn btn-primary modal-btn"
-                                    formaction="{{ route('movies.update', $movies->id) }}">Yes</button>
+                                    formaction="{{ route('movies.update', $movie->id) }}">Yes</button>
                             </div>
                         </div>
                     </div>
