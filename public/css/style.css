@@ -194,3 +194,46 @@
 }
 .setlist-ul li{list-style-type:none;}
 .concert-image-header{padding: 1% 0 1% 0;}
+
+/* ===== START OF MY STYLES ===== */
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #363636;
+}
+.login-wrapper{
+    width: 100%;
+}
+.login-container{
+    width: 20%;
+    margin: 0 auto;
+    padding: 3% 0;
+    height: auto;
+}
+.login-panel-heading{
+    padding: 2% 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+.login-panel-heading p{
+    font-size: 2rem;
+}
+.login-panel-heading h1{
+    font-size: 2.5rem;
+}
+.login-wrapper input{
+    width: 350px;
+}
+.login-wrapper button{
+    width: 350px;
+    margin-bottom: 2%;
+    font-size: 1.9rem;
+    text-transform: uppercase;
+}
+.login-options a{
+    display: block;
+    margin-bottom: 2%;
+    width: 350px;
+    font-size: 1.9rem;
+    text-align: center;
+    text-transform: uppercase;
+}

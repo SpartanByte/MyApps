@@ -1,10 +1,16 @@
 @extends('layouts.auth')
 @section('content')
+<div class="login-panel-heading">
+    <h1>Login  Into My Applications Environment</h1>
+    <p>Includes:<br />
+        Past Concerts Tracking System<br />
+        Owned Movies Tracking System<br />
+    </p>
+</div>
 <div class="login-wrapper">
     <div class="login-container">
             <div class="login-form-wrapper">
                 <div class="login-panel">
-                <div class="login-panel-heading">Login  Into Backchecker</div>
                     <div class="login-body">
                     <form class="login-form" role="form" method="POST" action="{{ url('/login') }}">
                         {{ csrf_field() }}
@@ -50,7 +56,7 @@
                     </form>
                     <div class="login-options-wrapper">
                         <div class="login-options">
-                            <a class="btn-standard btn-green" href="/register">Register</a><a class="btn-standard btn-green" href="/password/reset">Reset Password</a>
+                            <a class="btn-standard btn-green login-btn" href="/register">Register</a><a class="btn-standard btn-green  login-btn" href="/password/reset">Reset Password</a>
                         </div>
                     </div>
                 </div>
