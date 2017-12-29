@@ -7,10 +7,11 @@ use App\Models\Concert;
 
 
 class ConcertController extends Controller
-{ 
+{
     // load them all
     public function index(){
-        $events = Concert::all()->sortByDesc('concert_date');
+        // $events = Concert::all()->sort('concert_date');
+        $events = Concert::orderBy('concert_date', 'asc')->get();
         return view('concerts.index')->with(compact('events'));
     }
 
